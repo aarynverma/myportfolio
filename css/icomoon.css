@@ -1523,6 +1523,7 @@
 }
 .icon-instagram:before {
   content: "\eac2";
+  margin-left: 7px;
 }
 .icon-whatsapp:before {
   content: "\eac3";
@@ -1688,6 +1689,12 @@
 }
 .icon-linkedin2:before {
   content: "\eaf9";
+  margin-left: 7px;
+}
+.icon-github:before{
+  content: "\eaf10"
+  background-image: url("images/github.png");
+  margin-left: 7px;
 }
 .icon-linkedin22:before {
   content: "\eafa";
