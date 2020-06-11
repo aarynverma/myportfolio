@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -46,6 +47,9 @@ figure {
     color: #b3b3b3;
     font-style: italic;
     font-family: "Quicksand", Arial, sans-serif; }
+    #margin-correct {
+      padding-top: 25px;
+    }
     @media screen and (max-width: 480px) {
       figure figcaption {
         width: 100%; } }
