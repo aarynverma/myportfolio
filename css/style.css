@@ -109,7 +109,7 @@ figure {
     font-size: 12px;
     text-transform: uppercase; }
   #colorlib-aside #colorlib-logo {
-    
+    font-family: Arial, Georgia,serif; ;
     text-align: right;
     font-weight: 700;
     font-size: 22px;
