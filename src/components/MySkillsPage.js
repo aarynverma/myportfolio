@@ -30,7 +30,7 @@ const Main = styled.div`
   line-height: 1.5;
   cursor: pointer;
 
-  font-family: "Ubuntu Mono", monospace;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,7 +120,7 @@ const MySkillsPage = () => {
           <Description>
             <strong>Skills</strong>
             <p>
-              Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, AntDesign,
+              HTML, CSS, Js, React, Redux, Sass, Bootstrap, Tailwind, AntDesign,
               Firebase .
             </p>
           </Description>
