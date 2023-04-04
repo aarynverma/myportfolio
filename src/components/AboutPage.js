@@ -67,15 +67,13 @@ const AboutPage = () => {
           <img src={astronaut} alt="spaceman" />
         </Spaceman>
         <Main>
-          Hi I'm Aryan Verma I am computer science undergraduate student from
-          Indore, India. I am a tech-enthusiast and I am always on my mission to
-          learn something new every day.
+           Greetings! My name is Aryan Verma, and I am a Software Engineer from Indore, India. 
+           I am a passionate technologist with a background in computer science. 
           <br /> <br />
-          I also actively take part in developer community activities by
-          attending and organising community events in Indore. I like working on
-          open-source projects and contributing to great pieces of work. It also
-          enables me to interact with the community in a way and play my role in
-          it.
+            I enjoy taking part in various community events and activities in Indore, particularly those related to software development. 
+            I am an avid open-source contributor and enjoy collaborating with others to create innovative and impactful projects. 
+            I believe that participating in the community helps me to grow both personally and professionally, and 
+            I am always looking for new ways to contribute to the tech industry.
           <br /> <br />
         </Main>
 
