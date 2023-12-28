@@ -1,0 +1,70 @@
+/* //page.module.css */
+.home_title {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: DM Sans, sans-serif;
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 80px;
+  letter-spacing: -3px;
+  line-height: 1.2em;
+}
+
+.home_icons_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 20px;
+  height: 30vh;
+}
+
+.home_image_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  position: relative;
+}
+
+.home_image_icon:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 4px #ffffff;
+  -webkit-box-shadow: 0px 0px 0px 4px #ffffff;
+}
+
+.tooltip {
+  position: relative;
+  /* display: inline-block; */
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fff ;
+  color: #555;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: -80%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
