@@ -11,7 +11,6 @@ import {
 } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 import { FiExternalLink } from "react-icons/fi";
-import { link } from "fs";
 
 export default function Page() {
   const [isRotating, setRotating] = React.useState(false);
@@ -45,7 +44,7 @@ export default function Page() {
     {
       name: "Project",
       css: { transform: "-5deg", marginTop: "5px" },
-      link: "/",
+      link: "/projects",
     },
     {
       name: "Reach Out",
@@ -90,7 +89,7 @@ export default function Page() {
       </h1>
       <div className={styles.home_icons_wrapper}>
         {icons.map((item, index) => (
-          <a key={index} href={`${item.link}`} target="_blank" rel="noreferrer">
+          <a key={index} href={`${item.link}`} target={`${item.link==="/projects"?"":"_blank"}`} rel="noreferrer">
             <div
               className={`${styles.home_image_icon} ${styles.tooltip}`}
               style={{

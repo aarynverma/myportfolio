@@ -1,0 +1,42 @@
+.projects{
+    width: 100vh;
+    font-family: DM Sans, sans-serif;
+}
+
+.projects_wapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 10% 20% 0 20%;
+    font-family: DM Sans, sans-serif;
+}
+
+.projects_header{
+    width: 100%;
+}
+
+.hr_lines{
+    width: 100%;
+    height: .1px;
+    opacity: 60%;
+    background-color: #fff;
+    margin: 25px 0 0 0;
+}
+
+.projects_header_text{
+   display: flex;
+   align-items:flex-start;
+   /* gap: 5px; */
+}
+
+.projects_title{
+    display: flex;
+    align-items: center;
+}
+
+.back{
+    display: flex;
+    font-size: 30px;
+}
