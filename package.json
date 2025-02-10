@@ -25,5 +25,8 @@
     "eslint-config-next": "14.0.4",
     "file-loader": "^6.2.0",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

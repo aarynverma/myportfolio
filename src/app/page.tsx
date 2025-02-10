@@ -31,7 +31,7 @@ export default function Page() {
   };
 
   const handleCDDoubleClick = () => {
-    if(audioRef.current) audioRef.current.currentTime=0;
+    if (audioRef.current) audioRef.current.currentTime = 0;
   };
 
   const icons = [
@@ -89,7 +89,7 @@ export default function Page() {
       </h1>
       <div className={styles.home_icons_wrapper}>
         {icons.map((item, index) => (
-          <a key={index} href={`${item.link}`} target={`${item.link==="/projects"?"":"_blank"}`} rel="noreferrer">
+          <a key={index} href={`${item.link}`} target={`${item.link === "/projects" ? "" : "_blank"}`} rel="noreferrer">
             <div
               className={`${styles.home_image_icon} ${styles.tooltip}`}
               style={{
@@ -108,7 +108,9 @@ export default function Page() {
           </a>
         ))}
       </div>
-      <img src="/assets/memoji.png" alt="aryan" className={styles.memoji} />
+      <span className={`${styles.memoji_wrapper}`}>
+        <img src="/assets/memoji.png" alt="aryan" className={styles.memoji} />
+      </span>
       <h1
         color="light"
         className={`${styles.logo} ${isRotating ? styles.rotating : ""}`}
@@ -119,7 +121,9 @@ export default function Page() {
       >
         AV
       </h1>
-      {!isRotating&&<p className={styles.clickme}>Click Me</p>}
+      <span className={styles.clickme_wrapper}>
+      {!isRotating && <p className={styles.clickme}>Click Me</p>}
+      </span>
       <audio ref={audioRef}>
         <source src="/assets/music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.

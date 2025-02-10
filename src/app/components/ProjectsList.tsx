@@ -9,18 +9,7 @@ interface ProjectListProps {
 }
 
 const ProjectList: React.FC<ProjectListProps> = ({ projects, tagColors }) => {
-  // Function to determine the contrast color based on luminance
-  // const getContrastColor = (hexColor: string) => {
-  //   // Convert hex color to RGB
-  //   const rgbColor = parseInt(hexColor.replace('#', ''), 16);
-  //   const r = (rgbColor >> 16) & 0xff;
-  //   const g = (rgbColor >> 8) & 0xff;
-  //   const b = rgbColor & 0xff;
-  //   // Calculate luminance
-  //   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  //   // Return white for dark backgrounds and black for light backgrounds
-  //   return luminance > 0.5 ? '#000000' : '#ffffff';
-  // };
+
 
   const generateLightOpacityColor = (color: string, opacity: number) => {
     const rgb = color.match(/\w\w/g)?.map((hex) => parseInt(hex, 16));
@@ -44,6 +33,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects, tagColors }) => {
                   pointerEvents: "none",
                   borderRadius: "10px 10px 0px 0px",
                 }}
+                loading='lazy'
               />
               <div className={styles.projectListFooter}>
                 <span className={styles.projectListHeading}>
