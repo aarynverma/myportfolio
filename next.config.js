@@ -1,7 +1,18 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "standalone", // Removed to prevent "Maximum call stack size exceeded" on Vercel
   eslint: {
     ignoreDuringBuilds: true,
+  },
+
+  experimental: {
+    // VERY IMPORTANT — prevents canvas from breaking tracing
+    serverComponentsExternalPackages: ["canvas"],
+    outputFileTracingExcludes: {
+      "*": [
+        "node_modules/canvas/**",
+        "node_modules/sharp/**"
+      ],
+    },
   },
 };
 
