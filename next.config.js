@@ -1,27 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Add loader for MP3 files
-      config.module.rules.push({
-        test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              publicPath: "/_next/static/sounds/",
-              outputPath: "static/sounds/",
-              esModule: false,
-            },
-          },
-        ],
-      });
-    }
-
-    return config;
-  },
+  // output: "standalone", // Removed to prevent "Maximum call stack size exceeded" on Vercel
 };
 
 module.exports = nextConfig;
