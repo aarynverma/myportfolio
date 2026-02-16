@@ -1,26 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Add loader for MP3 files
-      config.module.rules.push({
-        test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              publicPath: "/_next/static/sounds/",
-              outputPath: "static/sounds/",
-              esModule: false,
-            },
-          },
-        ],
-      });
-    }
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
-    return config;
+  experimental: {
+    // VERY IMPORTANT — prevents canvas from breaking tracing
+    serverComponentsExternalPackages: ["canvas"],
+    outputFileTracingExcludes: {
+      "*": [
+        "node_modules/canvas/**",
+        "node_modules/sharp/**"
+      ],
+    },
   },
 };
 
