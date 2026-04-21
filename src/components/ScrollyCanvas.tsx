@@ -49,17 +49,31 @@ const ScrollyCanvas = () => {
         const ctx = canvas.getContext("2d", { alpha: false }); // Optimize for no transparency
         if (!ctx) return;
 
+        let lastIdx = -1;
+        let lastWidth = 0;
+        let lastHeight = 0;
+
         const render = () => {
             const idx = Math.min(
                 manifest.frames.length - 1,
                 Math.max(0, Math.round(frameIndex.get()))
             );
 
+            // Use physical pixels for drawing
+            const canvasWidth = canvas.width;
+            const canvasHeight = canvas.height;
+
+            if (idx === lastIdx && canvasWidth === lastWidth && canvasHeight === lastHeight) {
+                requestAnimationFrame(render);
+                return;
+            }
+
+            lastIdx = idx;
+            lastWidth = canvasWidth;
+            lastHeight = canvasHeight;
+
             const img = images[idx];
             if (img) {
-                // Use physical pixels for drawing
-                const canvasWidth = canvas.width;
-                const canvasHeight = canvas.height;
                 const canvasRatio = canvasWidth / canvasHeight;
                 const imgRatio = img.width / img.height;
 
@@ -70,44 +84,35 @@ const ScrollyCanvas = () => {
 
                 if (canvasRatio > imgRatio) {
                     drawHeight = canvasWidth / imgRatio;
-                    offsetY = (canvasHeight - drawHeight) / 2;
+                    // Align closer to top instead of absolute center (0.2 instead of 0.5) to naturally crop bottom
+                    offsetY = (canvasHeight - drawHeight) * 0.2;
                 } else {
                     drawWidth = canvasHeight * imgRatio;
                     offsetX = (canvasWidth - drawWidth) / 2;
                 }
 
-                if (canvasRatio > imgRatio) {
-                    drawHeight = canvasWidth / imgRatio;
-                    offsetY = (canvasHeight - drawHeight) / 2;
-                } else {
-                    drawWidth = canvasHeight * imgRatio;
-                    offsetX = (canvasWidth - drawWidth) / 2;
-                }
-
-                // Apply 1.1x zoom to allow for cropping
-                // And align closer to the TOP to crop the BOTTOM more heavily.
-                const scale = 1.1;
-                const scaledWidth = drawWidth * scale;
-                const scaledHeight = drawHeight * scale;
-
-                // Alignment factor: 0.5 = Center, 0.0 = Top/Left, 1.0 = Bottom/Right
-                // We want to keep the top visible and cut the bottom.
-                // So we use a factor small than 0.5 for Y.
-                const alignY = 0.2;
-                // We keep X centered (0.5)
-                const alignX = 0.5;
-
-                const scaledOffsetX = offsetX + (drawWidth - scaledWidth) * alignX;
-                const scaledOffsetY = offsetY + (drawHeight - scaledHeight) * alignY;
+                // Removed 1.1x scaling which was stretching low-res images unnecessarily resulting in blur
+                const scaledWidth = drawWidth;
+                const scaledHeight = drawHeight;
+                const scaledOffsetX = offsetX;
+                const scaledOffsetY = offsetY;
 
                 // Turn off image smoothing for pixel-perfect rendering if desired, 
                 // but usually for photos we want smoothing. 
                 // However, making sure we draw at high res is key.
                 ctx.imageSmoothingEnabled = true;
-                ctx.imageSmoothingQuality = 'high';
+                ctx.imageSmoothingQuality = 'low';
 
                 ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-                ctx.drawImage(img, scaledOffsetX, scaledOffsetY, scaledWidth, scaledHeight);
+                
+                // Use Math.round to prevent subpixel antialiasing which causes blurriness on canvas
+                ctx.drawImage(
+                    img,
+                    Math.round(scaledOffsetX),
+                    Math.round(scaledOffsetY),
+                    Math.round(scaledWidth),
+                    Math.round(scaledHeight)
+                );
             }
 
             requestAnimationFrame(render);
@@ -121,11 +126,12 @@ const ScrollyCanvas = () => {
         const handleResize = () => {
             if (canvasRef.current) {
                 // Handle High-DPI displays completely
-                const dpr = window.devicePixelRatio || 1;
+                // Clamp DPR to max 2 to prevent massive canvases on modern phones/Macs which kills performance
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
                 // Set physical dimensions to match device pixels
-                canvasRef.current.width = window.innerWidth * dpr;
-                canvasRef.current.height = window.innerHeight * dpr;
+                canvasRef.current.width = Math.round(window.innerWidth * dpr);
+                canvasRef.current.height = Math.round(window.innerHeight * dpr);
 
                 // Enforce logical dimensions via CSS
                 canvasRef.current.style.width = `${window.innerWidth}px`;

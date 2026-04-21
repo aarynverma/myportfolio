@@ -16,11 +16,11 @@ const projects = [
         link: "https://letschat-three.vercel.app/"
     },
     {
-        title: "Music Player",
-        description: "A functional music player interface with custom styling.",
-        tech: ["React JS", "SCSS", "Fort Awesome"],
-        color: "from-purple-500/20 to-pink-500/20",
-        link: "https://music-player-chi.vercel.app/"
+        title: "Spend Wise",
+        description: "AI-Powered Bank Statement Analyzer. Upload your bank or credit card statement (PDF/CSV) and get instant visual spending analysis with smart insights.",
+        tech: ["React JS", "AI", "Data Visualization"],
+        color: "from-amber-500/20 to-yellow-500/20",
+        link: "https://spendwise-9ukr-nnmo3kkub-aryan-vermas-projects-e474db90.vercel.app/"
     },
     {
         title: "Metamask Wallet",

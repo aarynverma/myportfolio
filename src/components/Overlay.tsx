@@ -56,7 +56,7 @@ const Overlay = () => {
 
             {/* Floating Resume Button */}
             <motion.a
-                href="https://drive.google.com/file/d/1shaWWsLO5NFclJnE36-vEA1ExLLFR8R_/view?usp=sharing"
+                href="https://drive.google.com/file/d/17F6s8xCos6JyFGun9KyBMwKjltSFs_L0/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: -20 }}
