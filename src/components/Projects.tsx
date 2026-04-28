@@ -2,11 +2,18 @@
 
 const projects = [
     {
-        title: "Your Clothings",
-        description: "A high-performance E-commerce platform for clothing.",
-        tech: ["React JS", "Redux", "Firebase"],
+        title: "Quick Intel",
+        description: "AI-powered Chrome extension that summarizes any web page in seconds using OpenAI, Anthropic, or Google Gemini",
+        tech: ["React JS", "TypeScript", "Tailwind CSS", "Vite", "Chrome Extension", "MV3"],
         color: "from-blue-500/20 to-cyan-500/20",
-        link: "https://your-clothings.vercel.app/"
+        link: "https://quick-intel-landing.vercel.app/",
+    },
+    {
+        title: "Spend Wise",
+        description: "AI-Powered Bank Statement Analyzer. Upload your bank or credit card statement (PDF/CSV) and get instant visual spending analysis with smart insights.",
+        tech: ["React JS", "AI", "Data Visualization"],
+        color: "from-amber-500/20 to-yellow-500/20",
+        link: "https://spendwise-9ukr-nnmo3kkub-aryan-vermas-projects-e474db90.vercel.app/"
     },
     {
         title: "Chat App",
@@ -14,13 +21,6 @@ const projects = [
         tech: ["React JS", "Firebase", "CSS3"],
         color: "from-emerald-500/20 to-green-500/20",
         link: "https://letschat-three.vercel.app/"
-    },
-    {
-        title: "Music Player",
-        description: "A functional music player interface with custom styling.",
-        tech: ["React JS", "SCSS", "Fort Awesome"],
-        color: "from-purple-500/20 to-pink-500/20",
-        link: "https://music-player-chi.vercel.app/"
     },
     {
         title: "Metamask Wallet",
