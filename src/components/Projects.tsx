@@ -13,14 +13,14 @@ const projects = [
         description: "AI-Powered Bank Statement Analyzer. Upload your bank or credit card statement (PDF/CSV) and get instant visual spending analysis with smart insights.",
         tech: ["React JS", "AI", "Data Visualization"],
         color: "from-amber-500/20 to-yellow-500/20",
-        link: "https://spendwise-9ukr-nnmo3kkub-aryan-vermas-projects-e474db90.vercel.app/"
+        link: "https://spendwise-9ukr.vercel.app/"
     },
     {
-        title: "Chat App",
-        description: "A real-time messaging application.",
-        tech: ["React JS", "Firebase", "CSS3"],
-        color: "from-emerald-500/20 to-green-500/20",
-        link: "https://letschat-three.vercel.app/"
+        title: "Flow Builder",
+        description: "Visual flow builder for constructing conditional node graphs with live validation and JSON export/import",
+        link: "https://react-flow-builder-seven.vercel.app/",
+        color: "from-blue-500/20 to-green-500/20",
+        tech: ["React 18", "TypeScript", "React Flow", "Zustand"],
     },
     {
         title: "Metamask Wallet",
