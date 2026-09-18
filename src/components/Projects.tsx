@@ -59,7 +59,7 @@ const projects = [
         tech: ["React JS", "TypeScript", "Chakra-UI"],
         color: "from-orange-500/20 to-red-500/20",
         link: "https://epic-wozniak-8a250b.netlify.app/"
-    },
+    }
 ];
 
 const Projects = () => {
