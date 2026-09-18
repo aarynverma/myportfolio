@@ -16,11 +16,42 @@ const projects = [
         link: "https://spendwise-9ukr.vercel.app/"
     },
     {
-        title: "Flow Builder",
-        description: "Visual flow builder for constructing conditional node graphs with live validation and JSON export/import",
-        link: "https://react-flow-builder-seven.vercel.app/",
-        color: "from-blue-500/20 to-green-500/20",
-        tech: ["React 18", "TypeScript", "React Flow", "Zustand"],
+        title: "Graphify",
+        description: "A persistent code knowledge graph over a six repo microservices workspace, built straight from source files and served to AI coding tools so they query a small scoped part of the graph instead of loading whole folders. Indexed about 1,800 files into 16,000 nodes and 37,000 edges with no LLM cost.",
+        tech: ["TypeScript", "MCP Server", "AST Parsing", "Claude Code"],
+        color: "from-violet-500/20 to-purple-500/20",
+    },
+    {
+        title: "TaskFlow",
+        description: "Full stack task management app built as a Turborepo monorepo, with role based access control, optimistic UI updates and a typed API layer shared across apps.",
+        tech: ["Next.js 15", "Hono", "Drizzle ORM", "PostgreSQL", "Turborepo"],
+        color: "from-indigo-500/20 to-sky-500/20",
+        link: "https://taskflow-web-gilt.vercel.app/login",
+    },
+    {
+        title: "NextFlow",
+        description: "Visual workflow builder built on React Flow, letting you drag out node graphs, wire conditions between them and save the result.",
+        tech: ["Next.js 15", "React Flow", "TypeScript"],
+        color: "from-lime-500/20 to-emerald-500/20",
+        link: "https://nextflow-umber-iota.vercel.app/",
+    },
+    {
+        title: "Ponytail",
+        description: "A Claude Code plugin and house rules setup that keeps AI coding sessions inside a bounded plan, implement, verify, fix, stop loop, with scoped slash commands, restricted tool access and a service discovery catalogue.",
+        tech: ["TypeScript", "Claude Code Plugin", "Developer Tooling"],
+        color: "from-emerald-500/20 to-teal-500/20",
+    },
+    {
+        title: "JARVIS",
+        description: "A personal AI assistant with a model router that picks the right model per task, streaming chat, long term memory through vector search and background jobs for scheduled work.",
+        tech: ["Next.js 15", "Hono", "Vercel AI SDK", "pgvector", "Mastra", "Inngest"],
+        color: "from-rose-500/20 to-pink-500/20",
+    },
+    {
+        title: "LinkedIn Content Agent",
+        description: "A multi agent setup that researches, writes and publishes LinkedIn posts on a daily schedule with no manual step in between.",
+        tech: ["TypeScript", "LLM APIs", "Automation", "Cron"],
+        color: "from-cyan-500/20 to-blue-500/20",
     },
     {
         title: "Metamask Wallet",
